@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recuperar Senha</title>
+  <link th:href="@{/recuperacao.css}" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <h2 class="logo"><img th:src="@{/img/blackbeltlogo.png}"></h2>
+      <form th:action="@{/recuperar-senha}" method="post">
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Digite seu e-mail" required />
+        </div>
+        <button class="login-button" type="submit">Enviar link de recuperação</button>
+        <p class="esqueceusenha"><a th:href="@{/}">Voltar ao login</a></p>
+        <div th:if="${mensagem}" class="success-message" th:text="${mensagem}"></div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

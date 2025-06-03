@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link th:href="@{/login.css}" rel="stylesheet" />
+  <title>Blackbelt</title>
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="login-container">
+      <h2 class="logo"><img th:src="@{/img/blackbeltlogo.png}"></h2>
+      <form action="/login" method="post">
+        <div class="input-group">
+          <input type="text" id="username" name="username" placeholder= "Digite seu Email" required />
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" name="password" placeholder="Digite sua Senha" required />
+          <div th:if="${param.error}" class="error-message">
+           	Email ou Senha incorretos. Tente novamente.
+          </div>
+        </div>
+
+        <button class="login-button" type="submit">Login</button>
+
+      </form>
+      <p class="esqueceusenha"> <a href="http://localhost:8080/esquecersenha">Esqueceu sua senha?</a></p>
+      <div th:if="${param.success}" class="success-message">
+        Login realizado com sucesso! Redirecionando...
+        <meta http-equiv="refresh" content="4;url=/" />
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

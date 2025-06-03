@@ -1,0 +1,98 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* Centraliza tudo na tela */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container h2 img {
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botão vermelho */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #e63946; /* vermelho */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #d62828; /* tom mais escuro no hover */
+}
+
+.esqueceusenha {
+  display: block;
+  text-align: left;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.esqueceusenha a {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.esqueceusenha a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #ff0000;
+  padding-top: 2px;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}

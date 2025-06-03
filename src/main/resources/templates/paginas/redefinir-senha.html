@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redefinir Senha</title>
+  <link th:href="@{/recuperacao.css}" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <h2 class="logo"><img th:src="@{/img/blackbeltlogo.png}"></h2>
+      <form th:action="@{/redefinirsenha}" method="post" onsubmit="return validarSenhas()">
+        <input type="hidden" name="token" th:value="${token}" />
+        <div class="input-group">
+          <input type="password" name="senha" placeholder="Nova senha" required />
+        </div>
+        <div class="input-group">
+          <input type="password" name="confirmarSenha" placeholder="Confirmar nova senha" required />
+        </div>
+        <button class="login-button" type="submit">Redefinir Senha</button>
+        <div th:if="${erro}" class="error-message" th:text="${erro}"></div>
+        <div th:if="${success}" class="success-message" th:text="${success}"></div>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+  function validarSenhas() {
+    const senha = document.querySelector('[name="senha"]').value;
+    const confirmar = document.querySelector('[name="confirmarSenha"]').value;
+    if (senha !== confirmar) {
+      alert("As senhas não coincidem.");
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>

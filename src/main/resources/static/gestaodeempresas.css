@@ -1,0 +1,304 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #fffefe;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 5px solid #ccc;
+}
+
+.header-left img {
+  width: 170px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.header-right .username {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  width: 170px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Layout principal */
+.main {
+  display: flex;
+  height: calc(100vh - 70px); /* Altura total menos o header */
+}
+
+/* Menu lateral */
+.sidebar {
+  width: 200px;
+  background-color: #000;
+  color: white;
+  padding-top: 2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.sidebar a {
+  color: #fffefe;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Conteúdo principal */
+.content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #fffefe;
+}
+
+/*Conteúdo de todos os forms*/
+
+.empresaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 10px;
+} 
+.button-campanha {
+  /*alterei as cores para o padrao do figma*/
+  background-color: #ad1707;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.last-upload {
+ font-size: 25px;
+  margin: 0;
+}
+
+.button-campanha:hover {
+  /*alterei as cores para o padrao do figma*/
+  background-color: #740107;
+}
+
+.title-upload {
+  color: #000;
+}
+
+
+@media screen and (max-width: 800px) {
+  .sidebar {
+    width: 78px;
+  }
+
+  .main {
+    margin-left: 78px;
+  }
+
+  .logo_name,
+  .item span:not(.material-symbols-outlined) {
+    display: none;
+  }
+}
+
+#popup {
+  display: none; /* Começa escondido */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  z-index: 1; /* Fica sobre o conteúdo da página */
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: left;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilo para o formulário dentro do pop-up */
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px; /* Espaçamento entre os elementos */
+  width: 100%;
+}
+
+.popup-content form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.popup-content form input[type="text"],
+.popup-content form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.popup-content form input[type="submit"] {
+  background-color: #ad1707;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.popup-content form input[type="submit"]:hover {
+  background-color: #740107;
+}
+#cnpj,
+#nome,
+#razaosocial {
+  width: 100%; /* Largura desejada */
+  height: 30px; /* Altura desejada */
+}
+
+/* Estilização para a tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #000; /* Cor do sidebar */
+  color: #fff;
+  margin-top: 20px; /* Espaço entre a tabela e os elementos acima */
+}
+
+table th,
+table td {
+  padding: 15px;
+  border: 1px solid #ffffff; /* Cor de borda semelhante ao hover do sidebar */
+  text-align: left;
+}
+table td a {
+  display: inline-block; /* Exibir os links como blocos em linha */
+  padding: 5px 10px; /* Espaçamento interno para criar aparência de botão */
+  margin-right: 10px; /* Espaço entre os botões */
+  color: #fff; /* Cor do texto */
+  background-color: #ad1707; /* Cor de fundo dos botões */
+  border-radius: 5px; /* Bordas arredondadas */
+  text-decoration: none; /* Remover sublinhado */
+  transition: background-color 0.3s; /* Animação de hover */
+  cursor: pointer;
+}
+
+table td a:hover {
+  background-color: #740107; /* Cor ao passar o mouse */
+}
+
+table th {
+  background-color: #000; /* Cor de destaque para o cabeçalho */
+}
+
+table tr:nth-child(even) {
+  background-color: #000; /* Cor alternada para linhas pares */
+}
+a {
+  /* ou qualquer cor de destaque */
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content {
+  padding: 20px;
+  background: white;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+#pagination-controls {
+  margin-top: 10px;
+  text-align: center; /* Centraliza os botões */
+  user-select: none;
+}
+
+#pagination-controls button {
+  background-color: #ad1707; /* mesma cor dos botões da tabela */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 0 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#pagination-controls button:hover:not(:disabled) {
+  background-color: #740107; /* mesma cor do hover dos botões da tabela */
+}
+
+#pagination-controls button:disabled {
+  background-color: #5c0502; /* tom mais escuro para desabilitado */
+  cursor: default;
+  opacity: 0.6;
+}
