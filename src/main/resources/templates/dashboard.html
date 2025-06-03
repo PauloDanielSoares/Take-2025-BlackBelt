@@ -14,7 +14,7 @@
 
   <header>
     <div class="header-left">
-      <a href="http://localhost:8080/"><img th:src="@{/img/blackbeltlogo.png}" alt="BlackBelt" /></a>
+      <a href="https://blackbelt.onrender.com/"><img th:src="@{/img/blackbeltlogo.png}" alt="BlackBelt" /></a>
     </div>
     <div class="header-right">
       <span class="username" th:text="${message}"></span>
@@ -26,10 +26,10 @@
       <nav>
         <ul>
           <!--<li><a href="#">Cadastro de usuarios</a></li>-->
-          <li class="item"><a href="http://localhost:8080/"><span class="material-symbols-outlined">dashboard</span><span th:text="${#authorization.expression('hasRole(''ROLE_MANAGER'')') ? 'Dashboard Global' : 'Dashboard'}">Dashboard</span></a></li>
-          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="http://localhost:8080/usuarios"><span class="material-symbols-outlined">groups</span><span>Gestão de Usuários</span></a></li>
-          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="http://localhost:8080/empresa"><span class="material-symbols-outlined">library_add</span><span>Gestão de Empresas</span></a></li>
-          <li class="item"><a href="http://localhost:8080/logout"><span class="material-symbols-outlined">logout</span><span>Logout</span></a></li>
+          <li class="item"><a href="https://blackbelt.onrender.com/"><span class="material-symbols-outlined">dashboard</span><span th:text="${#authorization.expression('hasRole(''ROLE_MANAGER'')') ? 'Dashboard Global' : 'Dashboard'}">Dashboard</span></a></li>
+          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="https://blackbelt.onrender.com/usuarios"><span class="material-symbols-outlined">groups</span><span>Gestão de Usuários</span></a></li>
+          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="https://blackbelt.onrender.com/empresa"><span class="material-symbols-outlined">library_add</span><span>Gestão de Empresas</span></a></li>
+          <li class="item"><a href="https://blackbelt.onrender.com/logout"><span class="material-symbols-outlined">logout</span><span>Logout</span></a></li>
         </ul>
       </nav>
     </aside>
@@ -37,57 +37,57 @@
     <section class="content">
       <!-- Conteúdo principal da home aqui -->
       <div class="dashboard-section" th:classappend="${#authorization.expression('hasRole(''ROLE_MANAGER'')') ? 'Dashboard Global' : 'Dashboard'}"></div>
-        <h1 class="title-dashboard">Dashboard</h1>
-        
-        <div class="charts-container">
+      <h1 class="title-dashboard">Dashboard</h1>
+
+      <div class="charts-container">
         <div class="chart-wrapper">
-    <h3>Vulnerabilidades por Empresa</h3>
-    <canvas id="vulnerabilidadesPorCategoria" width="500" height="350"></canvas>
-  </div>
-
-  <div class="chart-wrapper">
-    <h3>Vulnerabilidades por Gravidade</h3>
-    <canvas id="vulnerabilidadesPorGravidade" width="500" height="350"></canvas>
-  </div>
-
-  <div class="chart-wrapper">
-    <h3>Vulnerabilidades ao Longo do Tempo</h3>
-    <canvas id="vulnerabilidadesAoLongoDoTempo" width="500" height="350"></canvas>
-  </div>
-</div>
-        
-
-<div class="vulnerabilities-header">
-        <p class="last-upload">Lista de Vulnerabilidades:</p>
-<form id="csvForm" th:action="@{/importar-csv}" method="post" enctype="multipart/form-data" style="margin-bottom: 20px;">
-  <input type="file" name="file" accept=".csv,.xlsx" id="csvInput" style="display: none;" required />
-  <button type="button" id="csvButton" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}">Importar CSV</button>
-</form>
-
+          <h3>Vulnerabilidades por Empresa</h3>
+          <canvas id="vulnerabilidadesPorCategoria" width="500" height="350"></canvas>
         </div>
 
+        <div class="chart-wrapper">
+          <h3>Vulnerabilidades por Gravidade</h3>
+          <canvas id="vulnerabilidadesPorGravidade" width="500" height="350"></canvas>
+        </div>
 
-<form method="get" action="/" style="margin-bottom: 20px;">
-  <input type="text" name="busca" placeholder="Buscar por ativo, IP, CVEs, responsável..." />
-  
-  <select name="criticidade">
-    <option value="">Todas as criticidades</option>
-    <option value="Alto">Alto</option>
-    <option value="Médio">Médio</option>
-    <option value="Baixo">Baixo</option>
-    <option value="Crítico">Crítico</option>
-  </select>
+        <div class="chart-wrapper">
+          <h3>Vulnerabilidades ao Longo do Tempo</h3>
+          <canvas id="vulnerabilidadesAoLongoDoTempo" width="500" height="350"></canvas>
+        </div>
+      </div>
 
-  <select name="status">
-    <option value="">Todos os status</option>
-    <option value="Corrigido">Corrigido</option>
-    <option value="Pendente">Pendente</option>
-  </select>
 
-  <button type="submit">Filtrar</button>
-</form>
+      <div class="vulnerabilities-header">
+        <p class="last-upload">Lista de Vulnerabilidades:</p>
+        <form id="csvForm" th:action="@{/importar-csv}" method="post" enctype="multipart/form-data" style="margin-bottom: 20px;">
+          <input type="file" name="file" accept=".csv,.xlsx" id="csvInput" style="display: none;" required />
+          <button type="button" id="csvButton" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}">Importar CSV</button>
+        </form>
 
- <table id="document-table">
+      </div>
+
+
+      <form method="get" action="/" style="margin-bottom: 20px;">
+        <input type="text" name="busca" placeholder="Buscar por ativo, IP, CVEs, responsável..." />
+
+        <select name="criticidade">
+          <option value="">Todas as criticidades</option>
+          <option value="Alto">Alto</option>
+          <option value="Médio">Médio</option>
+          <option value="Baixo">Baixo</option>
+          <option value="Crítico">Crítico</option>
+        </select>
+
+        <select name="status">
+          <option value="">Todos os status</option>
+          <option value="Corrigido">Corrigido</option>
+          <option value="Pendente">Pendente</option>
+        </select>
+
+        <button type="submit">Filtrar</button>
+      </form>
+
+      <table id="document-table">
         <thead>
           <tr>
             <th>Data do Report</th>
@@ -96,19 +96,19 @@
             <th>IP</th>
             <th>CVes</th>
             <th>Criticidade</th>
-             <th>Recomendação para correção</th>
-              <th>Responsável</th>
-               <th>Status</th>
-               <th>Data Correção</th>
-               <th>Observação</th>
-               <th>Correção</th>
-               <th>Ação</th>
-               
+            <th>Recomendação para correção</th>
+            <th>Responsável</th>
+            <th>Status</th>
+            <th>Data Correção</th>
+            <th>Observação</th>
+            <th>Correção</th>
+            <th>Ação</th>
+
           </tr>
         </thead>
         <tbody>
           <tr th:each="documento : ${documentos}">
-          <td th:text="${documento.data}"></td>
+            <td th:text="${documento.data}"></td>
             <td th:text="${documento.ativo}"></td>
             <td th:text="${documento.ip}"></td>
             <td th:text="${documento.cves}"></td>
@@ -121,18 +121,16 @@
             <td th:text="${documento.correcao}"></td>
 
             <td>
-               <a href="javascript:void(0);"
-     th:attr="
+              <a href="javascript:void(0);" th:attr="
        data-id=${documento.id},
        data-responsavel=${documento.responsavel},
        data-status=${documento.status},
        data-data_correcao=${documento.data_correcao},
        data-observacao=${documento.observacao},
-       data-correcao=${documento.correcao}"
-     onclick="openEditPopup(this)">Editar</a>
-             
-             <a th:href="@{/removerdocumento/{iddocumento}(iddocumento=${documento.id})}" onclick="return confirm('Tem certeza que deseja excluir este documento?')">Excluir</a>
-              
+       data-correcao=${documento.correcao}" onclick="openEditPopup(this)">Editar</a>
+
+              <a th:href="@{/removerdocumento/{iddocumento}(iddocumento=${documento.id})}" onclick="return confirm('Tem certeza que deseja excluir este documento?')">Excluir</a>
+
             </td>
           </tr>
 
@@ -140,13 +138,13 @@
         </tbody>
       </table>
       <!-- Controles de paginação -->
-<div id="pagination-controls" style="margin-top: 10px;">
-  <button id="prev-page">Anterior</button>
-  <span id="page-info"></span>
-  <button id="next-page">Próximo</button>
-</div>
+      <div id="pagination-controls" style="margin-top: 10px;">
+        <button id="prev-page">Anterior</button>
+        <span id="page-info"></span>
+        <button id="next-page">Próximo</button>
+      </div>
 
-<div id="popupEdit" class="popup">
+      <div id="popupEdit" class="popup">
         <div class="popup-content">
           <span id="closePopupEdit" class="close">&times;</span>
 
@@ -154,42 +152,42 @@
           <form action="/editardocumentos" method="post">
             <label for="editId">ID</label>
             <input type="text" id="editId" name="id" readonly>
-            
+
             <label for="editResponsavel">Responsavel</label>
             <input type="text" id="editResponsavel" name="responsavel" required>
             <label for="editResponsavel">Status</label>
             <select id="editStatus" name="status" required>
-            
+
               <option value="Pendente">Pendente</option>
               <option value="Corrigido">Corrigido</option>
             </select>
-            
+
             <label for="editData_correcao">Data_Correcao</label>
             <input type="text" id="editData_correcao" name="data_correcao" required>
-            
+
             <label for="editObservacao">Observacao</label>
             <input type="text" id="editObservacao" name="observacao" required>
-           
-            
+
+
             <label for="editCorrecao">Correcao</label>
             <input type="text" id="editCorrecao" name="correcao" required>
             <input type="submit" value="Salvar">
-            
+
           </form>
         </div>
       </div>
-      </div>
- 	
-    </section>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </div>
+
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script th:src="@{/js/dashboard.js}"></script>
-  
+
   <script th:inline="javascript">
     /*<![CDATA[*/
     let documentos = JSON.parse(/*[[${documentosJson}]]*/ '[]');
     console.log("Documentos:", documentos);
     /*]]>*/
-</script>
+  </script>
 </body>
 
 </html>

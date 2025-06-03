@@ -14,7 +14,7 @@
 
   <header>
     <div class="header-left">
-      <a href="http://localhost:8080/"><img th:src="@{/img/blackbeltlogo.png}" alt="BlackBelt" /></a>
+      <a href="https://blackbelt.onrender.com/"><img th:src="@{/img/blackbeltlogo.png}" alt="BlackBelt" /></a>
     </div>
     <div class="header-right">
       <span class="username" th:text="${message}"></span>
@@ -26,10 +26,10 @@
       <nav>
         <ul>
           <!--<li><a href="#">Cadastro de usuarios</a></li>-->
-          <li class="item"><a href="http://localhost:8080/"><span class="material-symbols-outlined">dashboard</span><span th:text="${#authorization.expression('hasRole(''ROLE_MANAGER'')') ? 'Dashboard Global' : 'Dashboard'}">Dashboard</span></a></li>
-          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="http://localhost:8080/usuarios"><span class="material-symbols-outlined">groups</span><span>Gestão de Usuários</span></a></li>
-          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="http://localhost:8080/empresa"><span class="material-symbols-outlined">library_add</span><span>Gestão de Empresas</span></a></li>
-          <li class="item"><a href="http://localhost:8080/logout"><span class="material-symbols-outlined">logout</span><span>Logout</span></a></li>
+          <li class="item"><a href="https://blackbelt.onrender.com/"><span class="material-symbols-outlined">dashboard</span><span th:text="${#authorization.expression('hasRole(''ROLE_MANAGER'')') ? 'Dashboard Global' : 'Dashboard'}">Dashboard</span></a></li>
+          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="https://blackbelt.onrender.com/usuarios"><span class="material-symbols-outlined">groups</span><span>Gestão de Usuários</span></a></li>
+          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="https://blackbelt.onrender.com/empresa"><span class="material-symbols-outlined">library_add</span><span>Gestão de Empresas</span></a></li>
+          <li class="item"><a href="https://blackbelt.onrender.com/logout"><span class="material-symbols-outlined">logout</span><span>Logout</span></a></li>
         </ul>
       </nav>
     </aside>
@@ -60,9 +60,9 @@
       <div class="upload-section">
         <h1 class="title-upload">Gestão de Empresas</h1>
         <div class="empresaHeader">
-        <p class="last-upload">Lista de Empresas:</p>
-      <button id="openPopup" class="button-campanha">Adicionar Filial</button>
-      </div>
+          <p class="last-upload">Lista de Empresas:</p>
+          <button id="openPopup" class="button-campanha">Adicionar Filial</button>
+        </div>
 
         <!-- Retirar essa classe no css e talvez js
           <p class="history-upload">Histórico de uploads</p>
@@ -93,12 +93,12 @@
 
           </tbody>
         </table>
-             <!-- Controles de paginação -->
-<div id="pagination-controls" style="margin-top: 10px;">
-  <button id="prev-page">Anterior</button>
-  <span id="page-info"></span>
-  <button id="next-page">Próximo</button>
-</div>
+        <!-- Controles de paginação -->
+        <div id="pagination-controls" style="margin-top: 10px;">
+          <button id="prev-page">Anterior</button>
+          <span id="page-info"></span>
+          <button id="next-page">Próximo</button>
+        </div>
 
         <div id="popupEdit" class="popup">
           <div class="popup-content">
@@ -118,7 +118,7 @@
         </div>
       </div>
   </div>
-  
+
   </section>
 
   <script th:src="@{/js/gestaodeempresas.js}"></script>

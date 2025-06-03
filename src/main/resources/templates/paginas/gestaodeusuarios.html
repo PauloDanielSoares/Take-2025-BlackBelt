@@ -14,7 +14,7 @@
 
   <header>
     <div class="header-left">
-      <a href="http://localhost:8080/"><img th:src="@{/img/blackbeltlogo.png}" alt="BlackBelt" /></a>
+      <a href="https://blackbelt.onrender.com/"><img th:src="@{/img/blackbeltlogo.png}" alt="BlackBelt" /></a>
     </div>
     <div class="header-right">
       <span class="username" th:text="${message}"></span>
@@ -25,10 +25,10 @@
     <aside class="sidebar">
       <nav>
         <ul>
-          <li class="item"><a href="http://localhost:8080/"><span class="material-symbols-outlined">dashboard</span><span th:text="${#authorization.expression('hasRole(''ROLE_MANAGER'')') ? 'Dashboard Global' : 'Dashboard'}">Dashboard</span></a></li>
-          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="http://localhost:8080/usuarios"><span class="material-symbols-outlined">groups</span><span>Gestão de Usuários</span></a></li>
-          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="http://localhost:8080/empresa"><span class="material-symbols-outlined">library_add</span><span>Gestão de Empresas</span></a></li>
-          <li class="item"><a href="http://localhost:8080/logout"><span class="material-symbols-outlined">logout</span><span>Logout</span></a></li>
+          <li class="item"><a href="https://blackbelt.onrender.com/"><span class="material-symbols-outlined">dashboard</span><span th:text="${#authorization.expression('hasRole(''ROLE_MANAGER'')') ? 'Dashboard Global' : 'Dashboard'}">Dashboard</span></a></li>
+          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="https://blackbelt.onrender.com/usuarios"><span class="material-symbols-outlined">groups</span><span>Gestão de Usuários</span></a></li>
+          <li class="item" th:if="${#authorization.expression('hasRole(''ROLE_MANAGER'')')}"><a href="https://blackbelt.onrender.com/empresa"><span class="material-symbols-outlined">library_add</span><span>Gestão de Empresas</span></a></li>
+          <li class="item"><a href="https://blackbelt.onrender.com/logout"><span class="material-symbols-outlined">logout</span><span>Logout</span></a></li>
         </ul>
       </nav>
     </aside>
@@ -48,8 +48,8 @@
             <p th:if="${#fields.hasErrors('login')}" th:errors="*{login}" style="color:red"></p>
             <label>Senha</label>
             <input class="inp" type="password" name="password" th:field="*{password}" required>
-             <label>Nome</label>
-            <input class="inp" name="nome" th:field="*{nome}" required>    
+            <label>Nome</label>
+            <input class="inp" name="nome" th:field="*{nome}" required>
             <label>Cargo</label>
             <input class="inp" name="cargo" th:field="*{cargo}" required>
             <label>Permissao</label>
@@ -65,10 +65,10 @@
       </div>
 
       <h1 class="title-upload">Usuários</h1>
-	 
-	  <div class="usuarioHeader">
-      <p class="last-upload">Lista de Usuarios:</p>
-      <button id="openPopup" class="button-campanha">Adicionar Usuários</button>
+
+      <div class="usuarioHeader">
+        <p class="last-upload">Lista de Usuarios:</p>
+        <button id="openPopup" class="button-campanha">Adicionar Usuários</button>
       </div>
       <table id="document-table">
         <thead>
@@ -96,24 +96,24 @@
              data-cargo=${user.cargo},
              data-permissao=${user.permissao},
              data-empresa=${user.cnpjEmpresa}" onclick="openEditPopup(this)">Editar</a>
-             
-             
+
+
               <a th:href="@{/removerusuario/{idusuario}(idusuario=${user.id})}">Excluir</a>
-              
-              
+
+
             </td>
           </tr>
 
 
         </tbody>
       </table>
-      
+
       <div id="pagination-controls" style="margin-top: 10px;">
-  <button id="prev-page">Anterior</button>
-  <span id="page-info"></span>
-  <button id="next-page">Próximo</button>
-</div>
-      
+        <button id="prev-page">Anterior</button>
+        <span id="page-info"></span>
+        <button id="next-page">Próximo</button>
+      </div>
+
 
       <div id="popupEdit" class="popup">
         <div class="popup-content">
@@ -125,7 +125,7 @@
             <input type="text" id="editId" name="id" readonly>
             <label for="editLogin">Email</label>
             <input type="email" id="editLogin" name="login" required>
-            <label for="editPassword">Senha</label>      
+            <label for="editPassword">Senha</label>
             <input type="text" id="editPassword" name="password" required>
             <label for="editNome">Nome</label>
             <input type="text" id="editNome" name="nome" required>
