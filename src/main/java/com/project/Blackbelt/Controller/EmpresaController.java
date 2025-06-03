@@ -42,7 +42,7 @@ public class EmpresaController {
 		model.addAttribute("filialobj", new Empresa());
 		Iterable<Empresa> filiais = filialrepository.findAll();
         model.addAttribute("filiais", filiais);
-		return "/paginas/gestaodeempresas";
+		return "paginas/gestaodeempresas";
 	}
 	
 	

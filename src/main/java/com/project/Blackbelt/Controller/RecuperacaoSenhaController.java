@@ -23,13 +23,13 @@ public class RecuperacaoSenhaController {
     @RequestMapping("/esquecersenha")
     public String RecuperarSenha(Model model) {
     	
-        return "/paginas/recuperar-senha";
+        return "paginas/recuperar-senha";
     }
 
     @PostMapping("/recuperar-senha")
     public ModelAndView processarRecuperacao(@RequestParam("email") String email) {
         recuperacaoSenhaService.processarSolicitacaoRecuperacao(email);
-        ModelAndView mv = new ModelAndView("/paginas/recuperar-senha");
+        ModelAndView mv = new ModelAndView("paginas/recuperar-senha");
         mv.addObject("mensagem", "E-mail de recuperação enviado.");
         return mv;
     }
@@ -40,7 +40,7 @@ public class RecuperacaoSenhaController {
         if (usuario == null) {
             return new ModelAndView("redirect:/esquecersenha?tokenInvalido");
         }
-        ModelAndView mv = new ModelAndView("/paginas/redefinir-senha");
+        ModelAndView mv = new ModelAndView("paginas/redefinir-senha");
         mv.addObject("token", token);
         return mv;
     }

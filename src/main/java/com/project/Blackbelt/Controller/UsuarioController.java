@@ -38,7 +38,7 @@ public class UsuarioController {
 		 
 		model.addAttribute("usuarioobj", new Users());
 		
-		return "/paginas/gestaodeusuarios";
+		return "paginas/gestaodeusuarios";
 	}
 
 	
